@@ -3,22 +3,19 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import '../GlobalStyle.css';
 import image from '../assets/images/profile-img.jpg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-	faBook,
-	faEnvelope,
-	faFile,
-	faHome,
-	faServer,
-	faUser
-} from '@fortawesome/free-solid-svg-icons';
-import {
-	faFacebook,
-	faGithub,
-	faInstagram,
-	faLinkedin,
-	faTwitter
-} from '@fortawesome/free-brands-svg-icons';
+	FaBook,
+	FaEnvelope,
+	FaFacebook,
+	FaFile,
+	FaGithub,
+	FaHome,
+	FaInstagram,
+	FaLinkedin,
+	FaServer,
+	FaTwitter,
+	FaUser
+} from 'react-icons/fa';
 
 function NavBar() {
 	return (
@@ -30,42 +27,42 @@ function NavBar() {
 					<a
 						href="https://www.facebook.com/addisuhaile87/"
 						target="_blank"
-						rel="no-referrer"
+						rel="noreferrer"
 						className="facebook social"
 					>
-						<FontAwesomeIcon icon={faFacebook} size="1x" />
+						<FaFacebook />
 					</a>
 					<a
 						href="https://twitter.com/AddisuTedla"
 						target="_blank"
-						rel="no-referrer"
+						rel="noreferrer"
 						className="twitter social"
 					>
-						<FontAwesomeIcon icon={faTwitter} size="1x" />
+						<FaTwitter />
 					</a>
 					<a
 						href="https://www.instagram.com/addisu_haile/"
 						target="_blank"
-						rel="no-referrer"
+						rel="noreferrer"
 						className="instagram social"
 					>
-						<FontAwesomeIcon icon={faInstagram} size="1x" />
+						<FaInstagram />
 					</a>
 					<a
 						href="https://www.linkedin.com/in/addisu-tedla-8b4a10143/"
 						target="_blank"
-						rel="no-referrer"
+						rel="noreferrer"
 						class="linkedin social"
 					>
-						<FontAwesomeIcon icon={faLinkedin} size="1x" />
+						<FaLinkedin />
 					</a>
 					<a
 						href="https://github.com/Addisu87"
 						target="_blank"
-						rel="no-referrer"
+						rel="noreferrer"
 						class="github social"
 					>
-						<FontAwesomeIcon icon={faGithub} size="1x" />
+						<FaGithub />
 					</a>
 				</SocialLinks>
 			</Profile>
@@ -74,37 +71,37 @@ function NavBar() {
 				<ul>
 					<li>
 						<NavLink to="/">
-							<FontAwesomeIcon icon={faHome} size="1x" />
+							<FaHome />
 							<span>Home</span>
 						</NavLink>
 					</li>
 					<li>
 						<NavLink to="/about">
-							<FontAwesomeIcon icon={faUser} size="1x" />
+							<FaUser />
 							<span>About</span>
 						</NavLink>
 					</li>
 					<li>
 						<NavLink to="/resume">
-							<FontAwesomeIcon icon={faFile} size="1x" />
+							<FaFile />
 							<span>Resume</span>
 						</NavLink>
 					</li>
 					<li>
 						<NavLink to="/projects">
-							<FontAwesomeIcon icon={faBook} size="1x" />
+							<FaBook />
 							<span>Projects</span>
 						</NavLink>
 					</li>
 					<li>
 						<NavLink to="/services">
-							<FontAwesomeIcon icon={faServer} size="1x" />
+							<FaServer />
 							<span>Services</span>
 						</NavLink>
 					</li>
 					<li>
 						<NavLink to="/contact">
-							<FontAwesomeIcon icon={faEnvelope} size="1x" />
+							<FaEnvelope />
 							<span>Contact</span>
 						</NavLink>
 					</li>

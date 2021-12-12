@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import Typical from 'react-typical';
+import heroBg from '../assets/images/heroBg.jpg';
 
 function Home() {
 	return (
-		<Header>
+		<Container>
 			<h1>Addisu Haile</h1>
 			<p>
 				Hello, I'm {''}
@@ -31,13 +32,13 @@ function Home() {
 			<p>
 				Knack of building websites with front and back end operations.
 			</p>
-		</Header>
+		</Container>
 	);
 }
 
 export default Home;
 
-const Header = styled.div`
+const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -47,9 +48,14 @@ const Header = styled.div`
 	height: 100vh;
 	position: relative;
 	z-index: 2
-	min-width: 300px;
+	min-width: 100%;
 	min-height: fit-content;
-	background-image: url('../assets/images/profile-img.jpg')
+	padding: 60px 0;
+	overflow: hidden;
+	background: url(${heroBg});
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: cover;
 	&:before {
 		content: '';
 		position: absolute;
@@ -64,15 +70,16 @@ const Header = styled.div`
 		font-size: 64px;
 		font-weight: 700;
 		line-height: 56px;
-		color: #000;
+		color: #f5f8fd;
+		padding-bottom: 30px;
 	}
 	p {
-		color: #000;
+		color: #f5f8fd;
 		margin-bottom: 50px;
 		font-size: 26px;
 		font-family: 'M Plus Rounded 1c', Times, serif;
-		 span {
-			color: #000;
+		span {
+			color: #f5f8fd;
 			padding-bottom: 4px;
 			letter-spacing: 1px;
 			border-bottom: 2px solid #149ddd;
@@ -90,7 +97,7 @@ const Header = styled.div`
 		p {
 			font-size: 18px;
 			line-height: 24px;
-			margin-bottom: 30px;
+			margin-bottom: 30px;	
 		}
 	}
 `;

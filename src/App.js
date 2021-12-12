@@ -1,9 +1,11 @@
 import React from 'react';
 import NavBar from './components/NavBar.js';
 import styled from 'styled-components';
+import { FaArrowCircleUp } from 'react-icons/fa';
 import Home from './pages/Home.js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleUp } from '@fortawesome/free-solid-svg-icons';
+import About from './pages/About.js';
+import Resume from './pages/Resume.js';
+import Services from './pages/Services.js';
 // import Contact from './pages/Contact.js';
 
 function App() {
@@ -15,11 +17,14 @@ function App() {
 			<div className="main-content">
 				<div className="content">
 					<Home />
+					<About />
+					<Resume />
+					<Services />
+					{/* <Contact /> */}
 				</div>
-				{/* <Contact /> */}
 			</div>
 			<a href="#" className="back-to-top">
-				<FontAwesomeIcon icon={faCircleUp} />
+				<FaArrowCircleUp />
 			</a>
 		</Wrap>
 	);
