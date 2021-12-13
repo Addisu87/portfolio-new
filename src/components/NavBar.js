@@ -6,14 +6,9 @@ import image from '../assets/images/profile-img.jpg';
 import {
 	FaBook,
 	FaEnvelope,
-	FaFacebook,
 	FaFile,
-	FaGithub,
 	FaHome,
-	FaInstagram,
-	FaLinkedin,
 	FaServer,
-	FaTwitter,
 	FaUser
 } from 'react-icons/fa';
 
@@ -23,84 +18,42 @@ function NavBar() {
 			<Profile>
 				<img src={image} alt="profile-Img" />
 				<h1>Addisu Haile</h1>
-				<SocialLinks>
-					<a
-						href="https://www.facebook.com/addisuhaile87/"
-						target="_blank"
-						rel="noreferrer"
-						className="facebook social"
-					>
-						<FaFacebook />
-					</a>
-					<a
-						href="https://twitter.com/AddisuTedla"
-						target="_blank"
-						rel="noreferrer"
-						className="twitter social"
-					>
-						<FaTwitter />
-					</a>
-					<a
-						href="https://www.instagram.com/addisu_haile/"
-						target="_blank"
-						rel="noreferrer"
-						className="instagram social"
-					>
-						<FaInstagram />
-					</a>
-					<a
-						href="https://www.linkedin.com/in/addisu-tedla-8b4a10143/"
-						target="_blank"
-						rel="noreferrer"
-						class="linkedin social"
-					>
-						<FaLinkedin />
-					</a>
-					<a
-						href="https://github.com/Addisu87"
-						target="_blank"
-						rel="noreferrer"
-						class="github social"
-					>
-						<FaGithub />
-					</a>
-				</SocialLinks>
 			</Profile>
 
 			<Nav>
 				<ul>
 					<li>
-						<NavLink to="/">
+						<NavLink to="/" exact className="active">
 							<FaHome />
 							<span>Home</span>
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/about">
+						<NavLink to="/about" exact>
 							<FaUser />
 							<span>About</span>
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/resume">
+						<NavLink to="/resume" exact>
 							<FaFile />
 							<span>Resume</span>
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/projects">
+						<NavLink to="/projects" exact>
 							<FaBook />
 							<span>Projects</span>
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/services">
+						<NavLink to="/services" exact>
 							<FaServer />
 							<span>Services</span>
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/contact">
+						<NavLink to="/contact" exact>
 							<FaEnvelope />
 							<span>Contact</span>
 						</NavLink>
@@ -124,32 +77,12 @@ const SideBar = styled.div`
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	/* @media (max-width: 768px) {
+	margin-left: 0;
+	}
+	@media (max-width: 768px) {
 		display: hidden;
-	} */
 `;
 
-const SocialLinks = styled.div`
-	a {
-		display: inline-block;
-		padding: 0.25rem;
-		&.facebook {
-			color: #4968ad;
-		}
-		&.twitter {
-			color: #49a1eb;
-		}
-		&.instagram {
-			color: #c13584;
-		}
-		&.linkedin {
-			color: #00a0dc;
-		}
-		&.github {
-			color: white;
-		}
-	}
-`;
 const Profile = styled.div`
 	width: 100%;
 	text-align: center;
@@ -166,41 +99,61 @@ const Profile = styled.div`
 		font-size: 14px;
 		text-align: center;
 		color: #fff;
+		margin-bottom: 14px;
 	}
 `;
 
 const Nav = styled.div`
+	margin: 0;
+	padding: 0;
+	
 	ul {
 		width: 100%;
+		list-style: none;
 		li {
-			list-style: none;
-			a {
-				text-decoration: none;
-				font-size: 20px;
-				display: block;
-				padding: 1rem 0;
-				position: relative;
-				&::before {
-					content: '';
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 0.4rem;
-					height: 100%;
-					overflow-x: hidden;
-					transform-origin: bottom;
-					transform: scale(0);
-					transition: transform 0.6s,
-						0.2s width 0.5s cubic-bezier(1, -0.16, 0, 1.32);
+			position: relative;
+			white-space: nowrap;
+			
+			a,
+			&:focus {
+				display: flex;
+				align-items: center;
+				color: #a8a0b4;
+				padding: 12px 15px;
+				margin-bottom: 8px;
+				transition: 0.3s;
+				font-size: 15px;
 				}
-				svg {
-					min-width: 60px;
+				svg,
+				svg:focus {
+					font-size: 24px;
+					padding-right: 8px;
+					color: #6f7180;
 				}
 				span {
 					margin-left: 2px;
 				}
 			}
+			&:hover,
+			.active,
+			.active:focus,
+			li:hover > a {
+				text-decoration: none;
+				color: #149ddd;
+			}
+			&:hover,
+			.active,
+			.active:focus,
+			li:hover > a i {
+				text-decoration: none;
+				color: #fff;
+			}
 		}
+	}
+	@media screen and (max-width: 786px) {
+		overflow: hidden;
+		outline: none !important;
+		left: 0;
 	}
 `;
 

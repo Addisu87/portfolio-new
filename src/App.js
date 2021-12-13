@@ -1,12 +1,12 @@
 import React from 'react';
 import NavBar from './components/NavBar.js';
 import styled from 'styled-components';
+import { Route, Routes } from 'react-router-dom';
 import { FaArrowCircleUp } from 'react-icons/fa';
 import Home from './pages/Home.js';
 import About from './pages/About.js';
 import Resume from './pages/Resume.js';
 import Services from './pages/Services.js';
-// import Contact from './pages/Contact.js';
 
 function App() {
 	return (
@@ -16,11 +16,12 @@ function App() {
 			</div>
 			<div className="main-content">
 				<div className="content">
-					<Home />
-					<About />
-					<Resume />
-					<Services />
-					{/* <Contact /> */}
+					<Routes>
+						<Route path="/" element={<Home />}></Route>
+						<Route path="/about" element={<About />}></Route>
+						<Route path="/resume" element={<Resume />}></Route>
+						<Route path="/services" element={<Services />}></Route>
+					</Routes>
 				</div>
 			</div>
 			<a href="#" className="back-to-top">

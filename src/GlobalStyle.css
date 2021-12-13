@@ -5,7 +5,7 @@
 }
 
 body {
-	font-family: 'M Plus Rounded 1c', Times, serif;
+	font-family: 'M Plus Rounded 1c', serif;
 	color: #272829;
 }
 
@@ -25,5 +25,5 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'M Plus Rounded 1c', Times, serif;
+	font-family: 'M Plus Rounded 1c', serif;
 }

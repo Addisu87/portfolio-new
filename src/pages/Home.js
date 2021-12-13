@@ -2,6 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import Typical from 'react-typical';
 import heroBg from '../assets/images/heroBg.jpg';
+import {
+	FaFacebook,
+	FaGithub,
+	FaInstagram,
+	FaLinkedin,
+	FaTwitter
+} from 'react-icons/fa';
 
 function Home() {
 	return (
@@ -32,6 +39,48 @@ function Home() {
 			<p>
 				Knack of building websites with front and back end operations.
 			</p>
+			<SocialLinks>
+				<a
+					href="https://www.facebook.com/addisuhaile87/"
+					target="_blank"
+					rel="noreferrer"
+					className="facebook social"
+				>
+					<FaFacebook />
+				</a>
+				<a
+					href="https://twitter.com/AddisuTedla"
+					target="_blank"
+					rel="noreferrer"
+					className="twitter social"
+				>
+					<FaTwitter />
+				</a>
+				<a
+					href="https://www.instagram.com/addisu_haile/"
+					target="_blank"
+					rel="noreferrer"
+					className="instagram social"
+				>
+					<FaInstagram />
+				</a>
+				<a
+					href="https://www.linkedin.com/in/addisu-tedla-8b4a10143/"
+					target="_blank"
+					rel="noreferrer"
+					class="linkedin social"
+				>
+					<FaLinkedin />
+				</a>
+				<a
+					href="https://github.com/Addisu87"
+					target="_blank"
+					rel="noreferrer"
+					class="github social"
+				>
+					<FaGithub />
+				</a>
+			</SocialLinks>
 		</Container>
 	);
 }
@@ -54,7 +103,7 @@ const Container = styled.div`
 	overflow: hidden;
 	background: url(${heroBg});
 	background-repeat: no-repeat;
-	background-position: top center;
+	background-position: center;
 	background-size: cover;
 	&:before {
 		content: '';
@@ -77,7 +126,7 @@ const Container = styled.div`
 		color: #f5f8fd;
 		margin-bottom: 50px;
 		font-size: 26px;
-		font-family: 'M Plus Rounded 1c', Times, serif;
+		font-family: 'M Plus Rounded 1c', serif;
 		span {
 			color: #f5f8fd;
 			padding-bottom: 4px;
@@ -98,6 +147,28 @@ const Container = styled.div`
 			font-size: 18px;
 			line-height: 24px;
 			margin-bottom: 30px;	
+		}
+	}
+`;
+const SocialLinks = styled.div`
+	a {
+		display: inline-block;
+		padding: 0.25rem;
+		font-size: 24px;
+		&.facebook {
+			color: #4968ad;
+		}
+		&.twitter {
+			color: #49a1eb;
+		}
+		&.instagram {
+			color: #c13584;
+		}
+		&.linkedin {
+			color: #00a0dc;
+		}
+		&.github {
+			color: white;
 		}
 	}
 `;
