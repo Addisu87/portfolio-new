@@ -152,9 +152,20 @@ const Container = styled.div`
 `;
 const SocialLinks = styled.div`
 	a {
+		font-size: 18px;
 		display: inline-block;
-		padding: 0.25rem;
-		font-size: 24px;
+		background: #f5f8fd;
+		line-height: 1;
+		padding: 8px 0;
+		border-radius: 50%;
+		text-align: center;
+		width: 36px;
+		height: 36px;
+		transition: 0.3s;
+		margin-right: 10px;
+		&:hover {
+			background: #fff;
+		}
 		&.facebook {
 			color: #4968ad;
 		}
@@ -168,7 +179,7 @@ const SocialLinks = styled.div`
 			color: #00a0dc;
 		}
 		&.github {
-			color: white;
+			color: #000;
 		}
 	}
 `;

@@ -16,7 +16,7 @@ export default Title;
 
 const Header = styled.div`
 	text-transform: uppercase;
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 	position: relative;
 	color: #173b6c;
 	padding-bottom: 1rem;

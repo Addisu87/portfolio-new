@@ -1,16 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import Title from '../components/Title';
 
 function Resume() {
 	return (
 		<Section>
-			<Title>
-				<h2>Resume</h2>
-				<p>
-					More than a year of experience in front-end web development.
-					Ambitious and communicative. Good mentor and tech lead.
-				</p>
-			</Title>
+			<Title title={'Resume'} span={'Resume'} />
+			<p>
+				More than a year of experience in front-end web development.
+				Ambitious and communicative. Good mentor and tech lead.
+			</p>
 
 			<Row>
 				<div>
@@ -136,35 +135,24 @@ function Resume() {
 export default Resume;
 
 const Section = styled.div`
-	padding: 60px 0;
+	padding: 50px 0;
 	overflow: hidden;
 	background: #f5f8fd;
+	overflow: hidden;
+	padding-left: 1rem;
 `;
-const Title = styled.div`
-	padding-bottom: 30px;
-	h2 {
-		font-size: 32px;
-		font-weight: bold;
-		margin-bottom: 20px;
-		padding-bottom: 20px;
-		position: relative;
-		color: #173b6c;
-		h2::after {
-			content: '';
-			position: absolute;
-			display: block;
-			width: 50px;
-			height: 3px;
-			background: #149ddd;
-			bottom: 0;
-			left: 0;
-		}
-		p {
-			margin-bottom: 0;
-		}
-	}
-`;
+
 const Row = styled.div`
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 3rem;
+	row-gap: 2rem;
+	margin: 1rem 0;
+
+	p {
+		padding-top: 0.5rem;
+	}
 	h3 {
 		font-weight: 700;
 		font-size: 26px;
@@ -195,6 +183,11 @@ const ResumeItem = styled.div`
 		display: inline-block;
 		font-weight: 600;
 		margin-bottom: 10px;
+	}
+	p {
+		em {
+			padding-bottom: 18px;
+		}
 	}
 	ul {
 		padding-left: 20px;

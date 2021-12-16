@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import profile from '../assets/images/profile-img.jpg';
 import { FaChevronRight } from 'react-icons/fa';
 
-function Content() {
+function ContentAbout() {
 	return (
 		<Container>
 			<div>
@@ -58,7 +58,7 @@ function Content() {
 									<li>
 										<FaChevronRight />
 										<strong>Age:</strong>
-										<span>35</span>
+										<span>34</span>
 									</li>
 									<li>
 										<FaChevronRight />
@@ -100,7 +100,7 @@ function Content() {
 	);
 }
 
-export default Content;
+export default ContentAbout;
 
 const Container = styled.div`
 	overflow: hidden;
@@ -123,17 +123,18 @@ const Image = styled.div`
 `;
 
 const Contents = styled.div`
+	margin: 0.5rem;
 	h3 {
 		font-weight: 700;
 		font-size: 26px;
 		color: #173b6c;
-		margin: 1rem 0;
+		margin: 0.5rem 0;
 	}
 	.about-details {
 		overflow: hidden;
 		display: grid;
 		width: 100%;
-		grid-template-columns: 50% 2fr;
+		grid-template-columns: repeat(2, 1fr);
 		column-gap: 2rem;
 		row-gap: 1.5rem;
 		.name-details {

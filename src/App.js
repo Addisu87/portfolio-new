@@ -7,6 +7,7 @@ import Home from './pages/Home.js';
 import About from './pages/About.js';
 import Resume from './pages/Resume.js';
 import Services from './pages/Services.js';
+import Contact from './pages/Contact.js';
 
 function App() {
 	return (
@@ -21,12 +22,15 @@ function App() {
 						<Route path="/about" element={<About />}></Route>
 						<Route path="/resume" element={<Resume />}></Route>
 						<Route path="/services" element={<Services />}></Route>
+						<Route path="/contact" element={<Contact />}></Route>
 					</Routes>
 				</div>
 			</div>
-			<a href="#" className="back-to-top">
-				<FaArrowCircleUp />
-			</a>
+			<div className="back-to-top">
+				<a href="#">
+					<FaArrowCircleUp />
+				</a>
+			</div>
 		</Wrap>
 	);
 }
@@ -51,7 +55,31 @@ const Wrap = styled.div`
 	.back-to-top {
 		display: flex;
 		align-items: center;
-		justify-content: right;
+		justify-content: center;
 		color: #000;
+		width: 40px;
+		height: 40px;
+		/* color: #050d18; */
+		/* visibility: hidden; */
+		/* opacity: 0;
+		right: 15px;
+		bottom: 20px; */
+		/* z-index: 996; */
+		/* background: #fff; */
+		/* border-radius: 50px;
+		transition: all 0.4s; */
+		/* i {
+			font-size: 28px;
+			color: #fff;
+			line-height: 0;
+		}
+		&:hover {
+			background: #2eafec;
+			color: #fff;
+		}
+		&.active {
+			visibility: visible;
+			opacity: 1;
+		} */
 	}
 `;

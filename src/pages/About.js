@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Content from '../components/Content';
+import ContentAbout from '../components/ContentAbout';
 import Title from '../components/Title';
 import Skills from '../components/Skills';
 import {
@@ -16,7 +16,7 @@ function About() {
 	return (
 		<div className="AboutPage">
 			<Title title={'About'} span={'About'} />
-			<Content />
+			<ContentAbout />
 			<Title title={'Skills'} span={'Skills'} />
 			<SkillsContainer>
 				<Skills
@@ -68,7 +68,7 @@ const SkillsContainer = styled.div`
 	overflow: hidden;
 	display: grid;
 	width: 100%;
-	grid-template-columns: 50% 1fr;
+	grid-template-columns: repeat(4, 1fr);
 	column-gap: 3rem;
 	row-gap: 2rem;
 	margin: 2rem 0;
