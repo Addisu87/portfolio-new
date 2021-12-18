@@ -21,6 +21,7 @@ const Header = styled.div`
 	color: #173b6c;
 	padding-bottom: 1rem;
 	letter-spacing: 3px;
+	margin-left: 2rem;
 	&::before {
 		content: '';
 		position: absolute;

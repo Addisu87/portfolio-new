@@ -41,9 +41,9 @@ function NavBar() {
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/projects" exact>
+						<NavLink to="/portfolios" exact>
 							<FaBook />
-							<span>Projects</span>
+							<span>Portfolios</span>
 						</NavLink>
 					</li>
 					<li>

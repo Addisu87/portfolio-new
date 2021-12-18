@@ -49,6 +49,14 @@ function Home() {
 					<FaFacebook />
 				</a>
 				<a
+					href="https://www.linkedin.com/in/addisu-tedla-8b4a10143/"
+					target="_blank"
+					rel="noreferrer"
+					class="linkedin social"
+				>
+					<FaLinkedin />
+				</a>
+				<a
 					href="https://twitter.com/AddisuTedla"
 					target="_blank"
 					rel="noreferrer"
@@ -63,14 +71,6 @@ function Home() {
 					className="instagram social"
 				>
 					<FaInstagram />
-				</a>
-				<a
-					href="https://www.linkedin.com/in/addisu-tedla-8b4a10143/"
-					target="_blank"
-					rel="noreferrer"
-					class="linkedin social"
-				>
-					<FaLinkedin />
 				</a>
 				<a
 					href="https://github.com/Addisu87"

@@ -164,7 +164,7 @@ const Container = styled.div`
 	}
 
 	.slick-arrow.slick-prev, .slick-arrow.slick-next{
-	color:  #f5f8fd;
+	color: #f5f8fd;
 	background: #149ddd;
 	width: 20px;
 	height: 20px;
