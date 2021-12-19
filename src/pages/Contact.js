@@ -7,9 +7,8 @@ import Card from '../components/Card';
 function Contact() {
 	return (
 		<Section>
-			<Title title={'Contact'} span={'Contact'} />
-
 			<div className="text">
+				<Title title={'Contact'} span={'Contact'} />
 				<p>
 					I'm interested in freelance opportunities - especially
 					ambitious or large projects. However, if you have other
@@ -61,8 +60,8 @@ function Contact() {
 								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17783.63509004089!2d37.993049043930355!3d11.860116659256622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x16447de8d1cb7d57%3A0x8e1445393ee72527!2z4Yiw4Y2I4YioIOGMiOGKkOGJtSDvvIjhiJjhiI7vvIksIOGLsOGJpeGIqCDhibPhiabhiK0!5e1!3m2!1sam!2set!4v1637838405049!5m2!1sam!2set"
 								frameborder="0"
 								border="0"
-								width="500"
-								height="450"
+								width="450"
+								height="350"
 								allowfullscreen
 								tabIndex="0"
 								aria-hidden="false"
@@ -76,7 +75,7 @@ function Contact() {
 						<form className="email-form">
 							<fieldset>
 								<legend>Contact details</legend>
-								<div>
+								<div className="form-group">
 									<label for="name">
 										Your Name:
 										<input
@@ -88,7 +87,7 @@ function Contact() {
 										/>
 									</label>
 								</div>
-								<div>
+								<div className="form-group">
 									<label for="name">
 										Your Email:
 										<input
@@ -100,7 +99,7 @@ function Contact() {
 										/>
 									</label>
 								</div>
-								<div>
+								<div className="form-group">
 									<label for="name">
 										Subject:
 										<input
@@ -112,28 +111,21 @@ function Contact() {
 										/>
 									</label>
 								</div>
-								<div>
+								<div className="form-group">
 									<label for="name">
 										Message
 										<textarea
 											className="form-control"
 											name="message"
-											cols="50"
-											rows="12"
+											cols="30"
+											rows="10"
 											required
 										></textarea>
 									</label>
 								</div>
 
-								<div className="my-3">
-									<div className="loading">Loading</div>
-									<div className="error-message"></div>
-									<div className="sent-message">
-										Your message has been sent. Thank you!
-									</div>
-								</div>
 								<br />
-								<div className="text-center">
+								<div className="text-button">
 									<button type="submit">Send Message</button>
 								</div>
 							</fieldset>
@@ -148,7 +140,7 @@ function Contact() {
 export default Contact;
 
 const Section = styled.div`
-	padding: 40px 0;
+	padding: 24px 10px;
 	overflow: hidden;
 	background: #f5f8fd;
 	.item {
@@ -186,79 +178,57 @@ const Row = styled.div`
 
 const FormData = styled.div`
 	form {
-		display: inline-block;
-		.validate {
-			display: none;
-			color: red;
-			margin: 0 0 15px 0;
-			font-weight: 400;
-			font-size: 13px;
-		}
-		.error-message {
-			display: none;
-			color: #fff;
-			background: #ed3c0d;
-			text-align: left;
-			padding: 15px;
-			font-weight: 600;
-		}
-		.error-message br + br {
-			margin-top: 25px;
-		}
-		.sent-message {
-			display: none;
-			color: #fff;
-			background: #18d26e;
-			text-align: center;
-			padding: 15px;
-			font-weight: 600;
-		}
-		.loading {
-			display: none;
-			background: #fff;
-			text-align: center;
-			padding: 15px;
-		}
-		.loading:before {
-			content: '';
-			display: inline-block;
-			border-radius: 50%;
-			width: 24px;
-			height: 24px;
-			margin: 0 10px -6px 0;
-			border: 3px solid #18d26e;
-			border-top-color: #eee;
-			-webkit-animation: animate-loading 1s linear infinite;
-			animation: animate-loading 1s linear infinite;
-		}
-
-		label {
-			margin-bottom: 50px;
-			padding: 0 0 0 16px;
-			input,
-			textarea {
-				border-radius: 0;
-				box-shadow: none;
-				font-size: 14px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		background-color: #f5f8fd;
+		fieldset {
+			width: 100%;
+			max-width: 500vh;
+			margin: 0 auto;
+			padding: 20px;
+			box-shadow: 0px 0px 20px #000000010;
+			background-color: white;
+			border-radius: 8px;
+			margin-bottom: 20px;
+			label {
+				width: 100%;
+				margin-top: 20px;
+				font-size: 16px;
+				input,
+				textarea {
+					width: 100%;
+					padding: 5px;
+					font-size: 18px;
+					border: 1px solid rgba(128, 128, 128, 0.199);
+					margin-bottom: 5px;
+				}
+				input {
+					height: 30px;
+					width: 90%;
+				}
+				textarea {
+					resize: vertical;
+				}
 			}
-			input {
-				height: 30px;
-				width: 90%;
-			}
-			textarea {
-				padding: 15px 15px;
-		}
-		button {
-			background: #149ddd;
-			border: 0;
-			padding: 10px 24px;
-			color: #fff;
-			transition: 0.4s;
-			border-radius: 4px;
-			&:hover {
-				background: #37b3ed;
+			button[type='submit'] {
+				width: 50%;
+				border: none;
+				outline: none;
+				padding: 16px;
+				font-size: 18px;
+				border-radius: 8px;
+				text-align: center;
+				color: rgb(27, 166, 247);
+				cursor: pointer;
+				margin-top: 10px;
+				transition: 0.3s ease background-color;
+				&:hover {
+					background-color: rgb(214, 266, 236);
+				}
 			}
 		}
-		
 	}
 `;

@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
 import Catagories from '../components/Catagories';
 import Title from '../components/Title';
-import portfolios from '../components/PortfoliosData';
+import PortfoliosData from '../components/PortfoliosData';
 import MenuItems from '../components/MenuItems';
 
 const allCategories = [
 	'All',
-	...new Set(portfolios.map((item) => item.category))
+	...new Set(PortfoliosData.map((item) => item.category))
 ];
 console.log(allCategories);
 
 function Portfolios() {
 	const [categories, setCategories] = useState(allCategories);
-	const [menuItems, setMenuItems] = useState(portfolios);
+	const [menuItems, setMenuItems] = useState(PortfoliosData);
 
 	const filter = (category) => {
 		if (category === 'All') {
-			setMenuItems(portfolios);
+			setMenuItems(PortfoliosData);
 			return;
 		}
-		const filteredData = portfolios.filter((item) => {
+		const filteredData = PortfoliosData.filter((item) => {
 			return item.category === category;
 		});
 		setMenuItems(filteredData);

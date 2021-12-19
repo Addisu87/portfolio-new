@@ -35,7 +35,7 @@ const Address = styled.div`
 	}
 	h4 {
 		padding: 0 0 0 60px;
-		font-size: 22px;
+		font-size: 20px;
 		font-weight: 600;
 		margin-bottom: 5px;
 		color: #050d18;
