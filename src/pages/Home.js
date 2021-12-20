@@ -14,7 +14,7 @@ function Home() {
 	return (
 		<Container>
 			<h1>Addisu Haile</h1>
-			<p>
+			<p className="typical-items">
 				Hello, I'm {''}
 				<span>
 					<Typical
@@ -117,22 +117,25 @@ const Container = styled.div`
 	h1 {
 		margin: 0 0 10px 0;
 		font-size: 64px;
-		font-weight: 700;
-		line-height: 56px;
-		color: #f5f8fd;
+		font-weight: 400;
+		line-height: 30px;
+		color: #fff;
 		padding-bottom: 30px;
 	}
 	p {
-		color: #f5f8fd;
+		color:#fff;
 		margin-bottom: 50px;
 		font-size: 26px;
-		font-family: 'M Plus Rounded 1c', serif;
-		span {
-			color: #f5f8fd;
-			padding-bottom: 4px;
-			letter-spacing: 1px;
-			border-bottom: 2px solid #149ddd;
-		}
+		font-family: inherit;
+		
+	}
+	span {
+		color: #fff;
+		padding-bottom: 4px;
+		letter-spacing: 1px;
+	}
+	.typical-items{
+		border-bottom: 2px solid #149ddd;
 	}
 	@media (min-width: 1024px) {
 		background-attachment: fixed;

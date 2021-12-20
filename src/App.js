@@ -130,7 +130,7 @@ const Wrap = styled.div`
 		.line-3 {
 			height: 0.3rem;
 			width: 100%;
-			background-color: #037fff;
+			background-color: #149ddd;
 			pointer-events: none;
 			display: none;
 			border-radius: 30px;
