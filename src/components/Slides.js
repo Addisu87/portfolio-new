@@ -30,23 +30,23 @@ function Slides() {
 		autoplay: true,
 		autoplaySpeed: 2000,
 		pauseOnHover: true,
-		initialSlide: 0,
-		responsive: [
-			{
-				breakpoint: 1024,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 2
-				}
-			},
-			{
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
-				}
-			}
-		]
+		initialSlide: 0
+		// responsive: [
+		// 	{
+		// 		breakpoint: 1024,
+		// 		settings: {
+		// 			slidesToShow: 2,
+		// 			slidesToScroll: 2
+		// 		}
+		// 	},
+		// 	{
+		// 		breakpoint: 768,
+		// 		settings: {
+		// 			slidesToShow: 1,
+		// 			slidesToScroll: 1
+		// 		}
+		// 	}
+		// ]
 	};
 
 	return (

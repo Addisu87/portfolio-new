@@ -3,6 +3,7 @@ import Catagories from '../components/Catagories';
 import Title from '../components/Title';
 import PortfoliosData from '../components/PortfoliosData';
 import MenuItems from '../components/MenuItems';
+import styled from 'styled-components';
 
 const allCategories = [
 	'All',
@@ -25,7 +26,7 @@ function Portfolios() {
 		setMenuItems(filteredData);
 	};
 	return (
-		<div className="portfolio-page">
+		<PortfolioPage>
 			<div class="title">
 				<Title title={'Portfolios'} span={'Portfolios'} />
 				<p>
@@ -39,8 +40,17 @@ function Portfolios() {
 				<Catagories filter={filter} categories={categories} />
 				<MenuItems menuItem={menuItems} />
 			</div>
-		</div>
+		</PortfolioPage>
 	);
 }
 
 export default Portfolios;
+
+const PortfolioPage = styled.div`
+	padding: 20px 12px;
+	overflow: hidden;
+	background: #f5f8fd;
+	p {
+		padding: 8px;
+	}
+`;

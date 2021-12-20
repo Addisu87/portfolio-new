@@ -7,6 +7,7 @@
 body {
 	font-family: 'Rubix', sans-serif;
 	color: #272829;
+	font-size: 1rem;
 }
 
 a {
@@ -26,4 +27,17 @@ h4,
 h5,
 h6 {
 	font-family: 'M Plus Rounded 1c', serif;
+}
+
+@media screen and (max-width: 768px) {
+	html {
+		font-size: 90%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	h2,
+	h3 {
+		font-size: 70%;
+	}
 }

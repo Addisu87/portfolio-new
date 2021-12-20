@@ -22,7 +22,7 @@ function ContentAbout() {
 					<img src={profile} alt="profile-Img" />
 				</Image>
 				<Contents>
-					<div>
+					<div className="about-info">
 						<h3>UI/UX Designer &amp; Web Developer.</h3>
 						<p>
 							I have a serious passion for UI effects, animations
@@ -81,6 +81,8 @@ function ContentAbout() {
 								</ul>
 							</div>
 						</div>
+					</div>
+					<div>
 						<p>
 							My abundant energy fuels me in the pursuit of many
 							interests, hobbies, areas of study and teaching
@@ -103,14 +105,26 @@ function ContentAbout() {
 export default ContentAbout;
 
 const Container = styled.div`
+	padding: 20px 12px;
 	overflow: hidden;
 	background: #f5f8fd;
-	margin-top: 2rem;
-	margin-left: 2rem;
+	p {
+		padding: 8px;
+	}
+	@media screen and (max-width: 1400px) {
+		flex-direction: column;
+		.about-info {
+			margin-left: 0;
+			margin-top: 1rem;
+		}
+	}
 `;
 
 const Row = styled.div`
 	display: flex;
+	@media screen and (max-width: 1100px) {
+		grid-template-columns: repeat(1, 1fr);
+	}
 `;
 
 const Image = styled.div`
@@ -119,7 +133,7 @@ const Image = styled.div`
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	margin: 20px 20px; ;
+	margin: 20px 20px;
 `;
 
 const Contents = styled.div`
@@ -137,8 +151,12 @@ const Contents = styled.div`
 		grid-template-columns: repeat(2, 1fr);
 		column-gap: 2rem;
 		row-gap: 1.5rem;
+		@media screen and (max-width: 1100px) {
+			grid-template-columns: repeat(1, 1fr);
+			grid-gap: 0;
+		}
 		.name-details {
-			margin: 1rem 0;
+			margin: 0.2rem 0;
 			ul {
 				list-style: none;
 				padding: 0;

@@ -93,7 +93,7 @@ export default ServiceContent;
 
 const Row = styled.div`
 	display: grid;
-	width: 100%;
+	width: 95%;
 	grid-template-columns: repeat(3, 1fr);
 	column-gap: 3rem;
 	row-gap: 2rem;
@@ -132,5 +132,14 @@ const Row = styled.div`
 		padding-top: 16px;
 		line-height: 20px;
 		font-size: 16px;
+	}
+	@media screen and (max-width: 1000px) {
+		grid-template-columns: repeat(1, 1fr);
+		flex-direction: column;
+		grid-gap: 0;
+		width: 100%;
+		&:not(:last-child) {
+			margin-bottom: 1.2rem;
+		}
 	}
 `;

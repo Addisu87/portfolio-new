@@ -14,7 +14,7 @@ import {
 
 function About() {
 	return (
-		<div className="AboutPage">
+		<Wrap>
 			<Title title={'About'} span={'About'} />
 			<ContentAbout />
 			<Title title={'Skills'} span={'Skills'} />
@@ -58,18 +58,30 @@ function About() {
 				<Skills skill={'LaTex'} progress={'90%'} width={'90%'} />
 				<Skills skill={'Web Design'} progress={'75%'} width={'75%'} />
 			</SkillsContainer>
-		</div>
+		</Wrap>
 	);
 }
 
 export default About;
 
-const SkillsContainer = styled.div`
+const Wrap = styled.div`
+	padding: 20px 12px;
 	overflow: hidden;
+	background: #f5f8fd;
+	p {
+		padding: 8px;
+	}
+`;
+
+const SkillsContainer = styled.div`
 	display: grid;
 	width: 100%;
-	grid-template-columns: repeat(4, 1fr);
-	column-gap: 3rem;
-	row-gap: 2rem;
-	margin: 2rem 0;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 2rem;
+	row-gap: 1.2rem;
+	margin: 1rem 0;
+	@media screen and (max-width: 1100px) {
+		grid-template-columns: repeat(1, 1fr);
+		grid-gap: 0;
+	}
 `;

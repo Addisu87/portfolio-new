@@ -32,6 +32,12 @@ const Container = styled.div`
 	grid-template-columns: repeat(3, 1fr);
 	row-gap: 2rem;
 	column-gap: 1rem;
+	@media screen and (max-width: 1000px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media screen and (max-width: 768px) {
+		grid-template-columns: repeat(1, 1fr);
+	}
 	.portfolio {
 		.image-data {
 			position: relative;
@@ -56,14 +62,13 @@ const Container = styled.div`
 				height: 30vh;
 				object-fit: cover;
 			}
-
 			.hover-items {
 				list-style: none;
 				position: absolute;
 				top: 70%;
 				left: 50%;
 				transform: translate(-50%, -50%);
-				padding: 1rem 2rem;
+				padding: 10px 10px;
 				visibility: hidden;
 				li {
 					a {
@@ -88,11 +93,11 @@ const Container = styled.div`
 				}
 			}
 		}
-
 		h4 {
 			font-size: 1.2rem;
 			font-weight: 400;
 			color: #000;
+			margin-left: 0.5rem;
 			transition: all 0.3s ease-in-out;
 			&:hover {
 				color: #037fff;

@@ -155,6 +155,13 @@ const Container = styled.div`
 	column-gap: 3rem;
 	row-gap: 2rem;
 	margin: 0;
+	@media screen and (max-width: 768px) {
+		grid-template-columns: repeat(1, 1fr);
+		.map-section {
+			width: 100%;
+			height: 50vh;
+		}
+	}
 	.sides {
 		width: 100%;
 		padding: 30px;

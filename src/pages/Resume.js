@@ -135,11 +135,12 @@ function Resume() {
 export default Resume;
 
 const Section = styled.div`
-	padding: 50px 0;
+	padding: 20px 12px;
 	overflow: hidden;
 	background: #f5f8fd;
-	overflow: hidden;
-	padding-left: 1rem;
+	p {
+		padding: 8px;
+	}
 `;
 
 const Row = styled.div`
@@ -148,14 +149,14 @@ const Row = styled.div`
 	grid-template-columns: repeat(2, 1fr);
 	column-gap: 3rem;
 	row-gap: 2rem;
-	margin: 1rem 0;
+	margin: 0;
 
 	p {
 		padding-top: 0.5rem;
 	}
 	h3 {
 		font-weight: 700;
-		font-size: 26px;
+		font-size: 24px;
 		margin-top: 20px;
 		margin-bottom: 20px;
 		color: #050d18;
@@ -168,8 +169,8 @@ const ResumeItem = styled.div`
 	border-left: 2px solid #1f5297;
 	position: relative;
 	h4 {
-		line-height: 18px;
-		font-size: 18px;
+		line-height: 14px;
+		font-size: 16px;
 		font-weight: 600;
 		text-transform: uppercase;
 		font-family: 'M Plus Rounded 1c', Times, serif;
@@ -177,16 +178,16 @@ const ResumeItem = styled.div`
 		margin-bottom: 10px;
 	}
 	h5 {
-		font-size: 16px;
+		font-size: 14px;
 		background: #e4edf9;
 		padding: 5px 15px;
 		display: inline-block;
 		font-weight: 600;
-		margin-bottom: 10px;
+		margin-bottom: 8px;
 	}
 	p {
 		em {
-			padding-bottom: 18px;
+			padding-bottom: 8px;
 		}
 	}
 	ul {
