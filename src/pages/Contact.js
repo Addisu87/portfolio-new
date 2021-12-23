@@ -3,12 +3,13 @@ import { FaLocationArrow, FaMailBulk, FaPhone } from 'react-icons/fa';
 import styled from 'styled-components';
 import Title from '../components/Title';
 import Card from '../components/Card';
+import ContactForm from '../components/ContactForm';
 
 function Contact() {
 	return (
 		<Section>
 			<div className="text">
-				<Title title={'Contact'} span={'Contact'} />
+				<Title title={'Contact'} />
 				<p>
 					I'm interested in freelance opportunities - especially
 					ambitious or large projects. However, if you have other
@@ -71,7 +72,8 @@ function Contact() {
 				</div>
 
 				<div className="sides">
-					<FormData>
+					<ContactForm />
+					{/* <FormData>
 						<form className="email-form">
 							<fieldset>
 								<legend>Contact details</legend>
@@ -130,7 +132,7 @@ function Contact() {
 								</div>
 							</fieldset>
 						</form>
-					</FormData>
+					</FormData> */}
 				</div>
 			</Container>
 		</Section>
@@ -143,7 +145,7 @@ const Section = styled.div`
 	padding: 24px 10px;
 	overflow: hidden;
 	background: #f5f8fd;
-	.item {
+	p {
 		padding: 1.5rem 1rem;
 	}
 `;
@@ -183,59 +185,59 @@ const Row = styled.div`
 	flex-direction: column;
 `;
 
-const FormData = styled.div`
-	form {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
-		background-color: #f5f8fd;
-		fieldset {
-			width: 100%;
-			max-width: 500vh;
-			margin: 0 auto;
-			padding: 20px;
-			box-shadow: 0px 0px 20px #000000010;
-			background-color: white;
-			border-radius: 8px;
-			margin-bottom: 20px;
-			label {
-				width: 100%;
-				margin-top: 20px;
-				font-size: 16px;
-				input,
-				textarea {
-					width: 100%;
-					padding: 5px;
-					font-size: 18px;
-					border: 1px solid rgba(128, 128, 128, 0.199);
-					margin-bottom: 5px;
-				}
-				input {
-					height: 30px;
-					width: 90%;
-				}
-				textarea {
-					resize: vertical;
-				}
-			}
-			button[type='submit'] {
-				width: 50%;
-				border: none;
-				outline: none;
-				padding: 16px;
-				font-size: 18px;
-				border-radius: 8px;
-				text-align: center;
-				color: rgb(27, 166, 247);
-				cursor: pointer;
-				margin-top: 10px;
-				transition: 0.3s ease background-color;
-				&:hover {
-					background-color: rgb(214, 266, 236);
-				}
-			}
-		}
-	}
-`;
+// const FormData = styled.div`
+// 	form {
+// 		display: flex;
+// 		align-items: center;
+// 		justify-content: center;
+// 		width: 100%;
+// 		height: 100%;
+// 		background-color: #f5f8fd;
+// 		fieldset {
+// 			width: 100%;
+// 			max-width: 500vh;
+// 			margin: 0 auto;
+// 			padding: 20px;
+// 			box-shadow: 0px 0px 20px #000000010;
+// 			background-color: white;
+// 			border-radius: 8px;
+// 			margin-bottom: 20px;
+// 			label {
+// 				width: 100%;
+// 				margin-top: 20px;
+// 				font-size: 16px;
+// 				input,
+// 				textarea {
+// 					width: 100%;
+// 					padding: 5px;
+// 					font-size: 18px;
+// 					border: 1px solid rgba(128, 128, 128, 0.199);
+// 					margin-bottom: 5px;
+// 				}
+// 				input {
+// 					height: 30px;
+// 					width: 90%;
+// 				}
+// 				textarea {
+// 					resize: vertical;
+// 				}
+// 			}
+// 			button[type='submit'] {
+// 				width: 50%;
+// 				border: none;
+// 				outline: none;
+// 				padding: 16px;
+// 				font-size: 18px;
+// 				border-radius: 8px;
+// 				text-align: center;
+// 				color: rgb(27, 166, 247);
+// 				cursor: pointer;
+// 				margin-top: 10px;
+// 				transition: 0.3s ease background-color;
+// 				&:hover {
+// 					background-color: rgb(214, 266, 236);
+// 				}
+// 			}
+// 		}
+// 	}
+// `;

@@ -28,7 +28,7 @@ function Portfolios() {
 	return (
 		<PortfolioPage>
 			<div class="title">
-				<Title title={'Portfolios'} span={'Portfolios'} />
+				<Title title={'Portfolios'} />
 				<p>
 					This is a selection of projects I have worked in the past
 					year. As a self-employed developer I had a chance to meet

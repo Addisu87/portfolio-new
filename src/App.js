@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import NavBar from './components/NavBar.js';
 import styled from 'styled-components';
 import { Route, Routes } from 'react-router-dom';
-import { FaArrowCircleUp } from 'react-icons/fa';
 import Home from './pages/Home.js';
 import About from './pages/About.js';
 import Resume from './pages/Resume.js';
 import Portfolios from './pages/Portfolios';
 import Services from './pages/Services.js';
 import Contact from './pages/Contact.js';
+import ScrollTopArrow from './components/ScrollTopArrow.js';
 
 function App() {
 	const [navToggle, setNavToggle] = useState(false);
@@ -16,6 +16,7 @@ function App() {
 	const navClick = () => {
 		setNavToggle(!navToggle);
 	};
+
 	return (
 		<Wrap>
 			<div className={`side-bar ${navToggle ? 'navToggle' : ' '}`}>
@@ -29,35 +30,17 @@ function App() {
 			<div className="main-content">
 				<div className="content">
 					<Routes>
-						<Route path="/" element={<Home />} exact></Route>
-						<Route path="/about" element={<About />} exact></Route>
-						<Route
-							path="/resume"
-							element={<Resume />}
-							exact
-						></Route>
-						<Route
-							path="/portfolios"
-							element={<Portfolios />}
-							exact
-						></Route>
-						<Route
-							path="/services"
-							element={<Services />}
-							exact
-						></Route>
-						<Route
-							path="/contact"
-							element={<Contact />}
-							exact
-						></Route>
+						<Route path="/" element={<Home />} exact />
+						<Route path="/about" element={<About />} />
+						<Route path="/resume" element={<Resume />} />
+						<Route path="/portfolios" element={<Portfolios />} />
+						<Route path="/services" element={<Services />} />
+						<Route path="/contact" element={<Contact />} />
 					</Routes>
 				</div>
 			</div>
-			<div className="back-to-top">
-				<a href="#">
-					<FaArrowCircleUp />
-				</a>
+			<div className="scrollTop">
+				<ScrollTopArrow />
 			</div>
 		</Wrap>
 	);
@@ -75,12 +58,12 @@ const Wrap = styled.div`
 		border-right: 1px solid #2e344e;
 		transform-origin: left;
 		@media screen and (max-width: 1024px) {
-			transform: translateX(-100px);
+			transform: translateX(-250px);
 			transition: all 0.4s ease-in-out;
-			width: 20%;
+			width: 30%;
 		}
 		@media screen and (max-width: 768px) {
-			width: 30%;
+			width: 20%;
 		}
 	}
 	.navToggle {
@@ -95,23 +78,36 @@ const Wrap = styled.div`
 		background-color: #fff;
 		min-height: 100vh;
 		position: relative;
-		display: grid;
 		.content {
 			margin: 0.5rem 0.5rem;
 			@media screen and (max-width: 1024px) {
-				margin: 0.8rem 0.5rem;
-			}
-			@media screen and (max-width: 1400px) {
 				margin: 0.5rem 0.5rem;
 			}
 			@media screen and (max-width: 768px) {
-				margin: 0.2rem 0.5rem;
+				margin: 0;
 			}
 		}
+		@media screen and (max-width: 1024px) {
+			margin-left: 0;
+			width: 100%;
+		}
 	}
-	@media screen and (max-width: 1024px) {
-		margin-left: 0;
-		width: 100%;
+	@media screen and (max-width: 768px) {
+		svg {
+			height: 10px;
+		}
+		h2 {
+			font-size: 18px;
+		}
+		h3 {
+			font-size: 14px;
+		}
+		h4 {
+			font-size: 12px;
+		}
+		h5 {
+			font-size: 10px;
+		}
 	}
 	.nav-btn {
 		position: absolute;
@@ -146,13 +142,5 @@ const Wrap = styled.div`
 				display: block;
 			}
 		}
-	}
-	.back-to-top {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: #000;
-		width: 40px;
-		height: 40px;
 	}
 `;

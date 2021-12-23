@@ -15,9 +15,9 @@ import {
 function About() {
 	return (
 		<Wrap>
-			<Title title={'About'} span={'About'} />
+			<Title title={'About'} />
 			<ContentAbout />
-			<Title title={'Skills'} span={'Skills'} />
+			<Title title={'Skills'} />
 			<SkillsContainer>
 				<Skills
 					skill={'HTML'}

@@ -2,18 +2,14 @@ import React from 'react';
 import ServiceContent from '../components/ServiceContent';
 import Title from '../components/Title';
 import styled from 'styled-components';
-
 import Slides from '../components/Slides';
-
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 function Services() {
 	return (
 		<Container>
-			<Title title={'Services'} span={'Services'} />
+			<Title title={'Services'} />
 			<ServiceContent />
-			<Title title={'Testimonials'} span={'Testimonials'} />
+			<Title title={'Testimonials'} />
 			<div>
 				<p>People I've worked with have said some nice things...</p>
 			</div>

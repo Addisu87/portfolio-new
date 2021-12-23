@@ -23,43 +23,44 @@ function NavBar() {
 			<Nav>
 				<ul>
 					<li>
-						<NavLink to="/" exact className="active">
+						<NavLink to="/" exact>
 							<FaHome />
 							<span>Home</span>
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/about" exact>
+						<NavLink to="/about">
 							<FaUser />
 							<span>About</span>
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/resume" exact>
+						<NavLink to="/resume">
 							<FaFile />
 							<span>Resume</span>
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/portfolios" exact>
+						<NavLink to="/portfolios">
 							<FaBook />
 							<span>Portfolios</span>
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/services" exact>
+						<NavLink to="/services">
 							<FaServer />
 							<span>Services</span>
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/contact" exact>
+						<NavLink to="/contact">
 							<FaEnvelope />
 							<span>Contact</span>
 						</NavLink>
 					</li>
 				</ul>
 			</Nav>
+
 			<Footer>
 				<p> Addisu Haile @2021</p>
 			</Footer>
@@ -72,7 +73,6 @@ export default NavBar;
 const SideBar = styled.div`
 	height: 100vh;
 	overflow-y: none;
-	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -81,6 +81,7 @@ const SideBar = styled.div`
 	}
 	@media (max-width: 768px) {
 		display: hidden;
+		margin-left: 0;
 `;
 
 const Profile = styled.div`
@@ -104,9 +105,6 @@ const Profile = styled.div`
 `;
 
 const Nav = styled.div`
-	margin: 0;
-	padding: 0;
-	
 	ul {
 		width: 100%;
 		list-style: none;

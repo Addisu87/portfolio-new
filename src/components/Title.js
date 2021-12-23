@@ -4,10 +4,7 @@ import styled from 'styled-components';
 function Title({ title, span }) {
 	return (
 		<Header>
-			<h2>
-				{title}
-				<span>{span}</span>
-			</h2>
+			<h2>{title}</h2>
 		</Header>
 	);
 }
@@ -21,7 +18,10 @@ const Header = styled.div`
 	color: #173b6c;
 	padding-bottom: 1rem;
 	letter-spacing: 3px;
-	margin-left: 2rem;
+	margin-left: 1rem;
+	@media screen and (max-width: 768px) {
+		font-size: 22px;
+	}
 	&::before {
 		content: '';
 		position: absolute;

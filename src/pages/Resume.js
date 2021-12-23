@@ -5,7 +5,7 @@ import Title from '../components/Title';
 function Resume() {
 	return (
 		<Section>
-			<Title title={'Resume'} span={'Resume'} />
+			<Title title={'Resume'} />
 			<p>
 				More than a year of experience in front-end web development.
 				Ambitious and communicative. Good mentor and tech lead.

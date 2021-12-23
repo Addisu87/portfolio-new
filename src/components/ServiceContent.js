@@ -99,6 +99,14 @@ const Row = styled.div`
 	row-gap: 2rem;
 	margin: 0;
 	padding: 16px;
+	@media screen and (max-width: 768px) {
+		grid-template-columns: repeat(1, 1fr);
+		grid-gap: 0;
+		width: 100%;
+		&:not(:last-child) {
+			margin-bottom: 1.2rem;
+		}
+	}
 	i {
 		font-size: 20px;
 		color: #149ddd;
@@ -119,7 +127,7 @@ const Row = styled.div`
 	h4 {
 		font-weight: 700;
 		margin: 10px;
-		font-size: 18px;
+		font-size: 17px;
 		a {
 			margin-left: 10px;
 			color: #343a40;
@@ -132,14 +140,5 @@ const Row = styled.div`
 		padding-top: 16px;
 		line-height: 20px;
 		font-size: 16px;
-	}
-	@media screen and (max-width: 1000px) {
-		grid-template-columns: repeat(1, 1fr);
-		flex-direction: column;
-		grid-gap: 0;
-		width: 100%;
-		&:not(:last-child) {
-			margin-bottom: 1.2rem;
-		}
 	}
 `;
