@@ -6,7 +6,7 @@ import Slides from '../components/Slides';
 
 function Services() {
 	return (
-		<Container>
+		<Section>
 			<Title title={'Services'} />
 			<ServiceContent />
 			<Title title={'Testimonials'} />
@@ -14,13 +14,13 @@ function Services() {
 				<p>People I've worked with have said some nice things...</p>
 			</div>
 			<Slides />
-		</Container>
+		</Section>
 	);
 }
 
 export default Services;
 
-const Container = styled.div`
+const Section = styled.div`
 	padding: 20px 12px;
 	overflow: hidden;
 	background: #f5f8fd;

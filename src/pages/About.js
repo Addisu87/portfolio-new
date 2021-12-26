@@ -14,7 +14,7 @@ import {
 
 function About() {
 	return (
-		<Wrap>
+		<Section>
 			<Title title={'About'} />
 			<ContentAbout />
 			<Title title={'Skills'} />
@@ -58,13 +58,13 @@ function About() {
 				<Skills skill={'LaTex'} progress={'90%'} width={'90%'} />
 				<Skills skill={'Web Design'} progress={'75%'} width={'75%'} />
 			</SkillsContainer>
-		</Wrap>
+		</Section>
 	);
 }
 
 export default About;
 
-const Wrap = styled.div`
+const Section = styled.div`
 	padding: 20px 12px;
 	overflow: hidden;
 	background: #f5f8fd;

@@ -145,6 +145,7 @@ const Section = styled.div`
 	padding: 24px 10px;
 	overflow: hidden;
 	background: #f5f8fd;
+	flex: 1;
 	p {
 		padding: 1.5rem 1rem;
 	}
@@ -153,6 +154,7 @@ const Section = styled.div`
 const Container = styled.div`
 	display: grid;
 	width: 100%;
+	height: 100%;
 	grid-template-columns: repeat(2, 1fr);
 	column-gap: 3rem;
 	row-gap: 2rem;
@@ -181,8 +183,7 @@ const Container = styled.div`
 `;
 
 const Row = styled.div`
-	display: flex;
-	flex-direction: column;
+	flex: 0.3;
 `;
 
 // const FormData = styled.div`

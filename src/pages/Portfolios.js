@@ -26,7 +26,7 @@ function Portfolios() {
 		setMenuItems(filteredData);
 	};
 	return (
-		<PortfolioPage>
+		<Section>
 			<div class="title">
 				<Title title={'Portfolios'} />
 				<p>
@@ -40,13 +40,13 @@ function Portfolios() {
 				<Catagories filter={filter} categories={categories} />
 				<MenuItems menuItem={menuItems} />
 			</div>
-		</PortfolioPage>
+		</Section>
 	);
 }
 
 export default Portfolios;
 
-const PortfolioPage = styled.div`
+const Section = styled.div`
 	padding: 20px 12px;
 	overflow: hidden;
 	background: #f5f8fd;

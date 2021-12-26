@@ -12,7 +12,7 @@ import {
 
 function Home() {
 	return (
-		<Hero>
+		<Section>
 			<div className="typical-items">
 				<h1>Addisu Haile</h1>
 				<p>
@@ -88,13 +88,13 @@ function Home() {
 					</a>
 				</SocialLinks>
 			</div>
-		</Hero>
+		</Section>
 	);
 }
 
 export default Home;
 
-const Hero = styled.div`
+const Section = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
