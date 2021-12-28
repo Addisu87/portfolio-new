@@ -1,157 +1,177 @@
-import React, { useState } from 'react';
-import { Button, TextField } from '@mui/material';
+import React from 'react';
+import {
+	Box,
+	Button,
+	Container,
+	CssBaseline,
+	Grid,
+	TextField
+} from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import styled from 'styled-components';
-import emailjs from 'emailjs-com';
 import Swal from 'sweetalert2';
-import validator from 'validator';
-
-const service_id = process.env.REACT_APP_SERVICE_ID;
-const template_id = process.env.REACT_APP_TEMPLATE_ID;
-const user_id = process.env.REACT_APP_USER_ID;
+import useForm from './useForm';
+import validate from './validateLogin';
 
 const ContactForm = () => {
-	//form Validation
-	const [name, setName] = useState('');
-	const [email, setEmail] = useState('');
-	const [subject, setSubject] = useState('');
-	const [message, setMessage] = useState('');
+	const { handleChange, handleSubmit, values, errors } = useForm(
+		submit,
+		validate
+	);
 
-	// Error validation
-	// const [emailError, setEmailError] = useState('');
-	const [errorMessages, setErrorMessages] = useState([]);
-	const [showErrors, setShowErrors] = useState(false);
+	function submit() {
+		Swal.fire({
+			icon: 'success',
+			title: 'Message Sent Successfully'
+		});
+	}
 
-	const validateEmail = (e) => {
-		if (validator.isEmail(email)) {
-			return true;
-			// setEmailError('Valid Email :)');
-		} else {
-			return false;
-			// setEmailError('Enter valid Email!');
-		}
-	};
-
-	let errors = [];
-
-	const formValidation = () => {
-		setErrorMessages([]);
-
-		const isNameValid = name !== ('' || /^[a-zA-Z]+$/);
-		const isSubjectValid = subject !== '';
-		const isMessageValid = message !== '';
-
-		if (!isNameValid) {
-			errors.push('Name is not valid');
-		}
-		if (!validateEmail(email) || email === '') {
-			errors.push('Enter valid Email!');
-		}
-		if (!isSubjectValid) {
-			errors.push('Subject is not valid.');
-		}
-		if (!isMessageValid) {
-			errors.push('Message is not valid.');
-		}
-		// if (errors.length > 0) {
-		// 	setShowErrors({ showErrors: true });
-		// 	setErrorMessages(errors);
-		// } else {
-		// 	setShowErrors({ showErrors: false });
-		// }
-	};
-
-	const sendEmail = (e) => {
-		e.preventDefault();
-
-		emailjs.sendForm(service_id, template_id, e.target, user_id).then(
-			(result) => {
-				setShowErrors({ showErrors: false });
-				console.log(result.text);
-				Swal.fire({
-					icon: 'success',
-					title: 'Message Sent Successfully'
-				});
-			},
-			(error) => {
-				setShowErrors({ showErrors: true });
-				setErrorMessages(errors);
-				console.log(error.text);
-				Swal.fire({
-					icon: 'error',
-					title: 'Oops, something went wrong',
-					text: error.text
-				});
-			}
-		);
-		e.target.reset();
-	};
+	const theme = createTheme();
 
 	return (
 		<Wrap>
-			<form onSubmit={sendEmail}>
-				<TextField
-					id="outlined-basic-name"
-					label="Full name"
-					variant="outlined"
-					fullWidth
-					placeholder="Name..."
-					required
-					margin="normal"
-					onChange={(e) => setName({ name: e.target.value })}
-				/>
+			<ThemeProvider theme={theme}>
+				<Container component="main" maxWidth="xs">
+					<CssBaseline />
+					<Box
+						sx={{
+							marginTop: 4,
+							display: 'flex',
+							flexDirection: 'column',
+							alignItems: 'center'
+						}}
+					>
+						<Box
+							component="form"
+							noValidation
+							onSubmit={handleSubmit}
+							sx={{ mt: 2 }}
+						>
+							<Grid container spacing={2}>
+								<Grid item xs={12} sm={6}>
+									<TextField
+										className={`${
+											errors.firstName && 'inputError'
+										}`}
+										id="firstName"
+										label="First Name"
+										name="firstName"
+										type="text"
+										required
+										fullWidth
+										autoComplete="given-name"
+										autoFocus
+										value={values.firstName}
+										onChange={handleChange}
+									/>
+									{errors.firstName && (
+										<p className="error">
+											{errors.firstName}
+										</p>
+									)}
+								</Grid>
 
-				<TextField
-					id="outlined-basic-email"
-					variant="outlined"
-					fullWidth
-					label="Email"
-					placeholder="Email…"
-					required
-					margin="normal"
-					onChange={(e) =>
-						setEmail({ email: validateEmail(e.target.value) })
-					}
-				/>
+								<Grid item xs={12} sm={6}>
+									<TextField
+										className={`${
+											errors.lastName && 'inputError'
+										}`}
+										id="lastName"
+										label="Last Name"
+										name="lastName"
+										type="text"
+										required
+										fullWidth
+										autoComplete="family-name"
+										value={values.lastName}
+										onChange={handleChange}
+									/>
+									{errors.lastName && (
+										<p className="error">
+											{errors.lastName}
+										</p>
+									)}
+								</Grid>
 
-				<TextField
-					id="outlined-basic-subject"
-					variant="outlined"
-					fullWidth
-					label="Subject"
-					placeholder="Subject…"
-					required
-					margin="normal"
-					onChange={(e) => setSubject({ subject: e.target.value })}
-				/>
+								<Grid item xs={12}>
+									<TextField
+										className={`${
+											errors.email && 'inputError'
+										}`}
+										id="email"
+										label="Email Address"
+										name="email"
+										type="email"
+										fullWidth
+										required
+										autoComplete="email"
+										value={values.email}
+										onChange={handleChange}
+									/>
+									{errors.email && (
+										<p className="error">{errors.email}</p>
+									)}
+								</Grid>
 
-				<TextField
-					id="outlined-basic-opinion"
-					multiline
-					variant="outlined"
-					rows={10}
-					fullWidth
-					label="Message"
-					placeholder="Message..."
-					required
-					margin="normal"
-					onChange={(e) => setMessage({ message: e.target.value })}
-				/>
+								<Grid item xs={12}>
+									<TextField
+										className={`${
+											errors.subject && 'inputError'
+										}`}
+										id="subject"
+										name="subject"
+										label="Subject"
+										type="text"
+										required
+										fullWidth
+										autoComplete="Subject"
+										value={values.subject}
+										onChange={handleChange}
+									/>
+									{errors.subject && (
+										<p className="error">
+											{errors.subject}
+										</p>
+									)}
+								</Grid>
 
-				{showErrors
-					? errorMessages.map((item, index) => {
-							return <ul key={index}>{item}</ul>;
-					  })
-					: null}
-
-				<Button
-					variant="contained"
-					color="primary"
-					type="submit"
-					onClick={formValidation}
-				>
-					Send Message
-				</Button>
-			</form>
+								<Grid item xs={12}>
+									<TextField
+										className={`${
+											errors.message && 'inputError'
+										}`}
+										id="message"
+										multiline
+										name="message"
+										label="Message"
+										rows={10}
+										type="text"
+										fullWidth
+										required
+										autoComplete="Message"
+										value={values.message}
+										onChange={handleChange}
+									/>
+									{errors.message && (
+										<p className="error">
+											{errors.message}
+										</p>
+									)}
+								</Grid>
+							</Grid>
+							<Button
+								variant="contained"
+								color="success"
+								type="submit"
+								fullWidth
+								sx={{ mt: 3, mb: 2 }}
+							>
+								Submit
+							</Button>
+						</Box>
+					</Box>
+				</Container>
+			</ThemeProvider>
 		</Wrap>
 	);
 };
@@ -159,18 +179,14 @@ const ContactForm = () => {
 export default ContactForm;
 
 const Wrap = styled.div`
-	text-align: center;
-	max-width: 100%;
-	margin: 18px auto;
-	height: 100%;
-	flex: 0.7;
-	form {
-		border: 1px solid lightgray;
-		border-radius: 10px;
-		padding: 20px;
-		margin: 25px 0;
-		Button {
-			width: 40%;
-		}
+	p {
+		margin: none;
+	}
+	.error {
+		color: red;
+		font-size: 12px;
+	}
+	.inputError {
+		border-color: red;
 	}
 `;
