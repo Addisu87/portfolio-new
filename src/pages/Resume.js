@@ -4,7 +4,7 @@ import Title from '../components/Title';
 
 function Resume() {
 	return (
-		<Section>
+		<Section id="resume">
 			<Title title={'Resume'} />
 			<p>
 				More than a year of experience in front-end web development.
@@ -150,7 +150,6 @@ const Row = styled.div`
 	column-gap: 3rem;
 	row-gap: 2rem;
 	margin: 0;
-
 	p {
 		padding-top: 0.5rem;
 	}

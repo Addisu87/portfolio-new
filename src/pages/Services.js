@@ -6,7 +6,7 @@ import Slides from '../components/Slides';
 
 function Services() {
 	return (
-		<Section>
+		<Section id="services">
 			<Title title={'Services'} />
 			<ServiceContent />
 			<Title title={'Testimonials'} />

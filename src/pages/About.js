@@ -14,7 +14,7 @@ import {
 
 function About() {
 	return (
-		<Section>
+		<Section id="about">
 			<Title title={'About'} />
 			<ContentAbout />
 			<Title title={'Skills'} />

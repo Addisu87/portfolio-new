@@ -44,6 +44,7 @@ const ContactForm = () => {
 						<Box
 							component="form"
 							noValidation
+							autoComplete="off"
 							onSubmit={handleSubmit}
 							sx={{ mt: 2 }}
 						>
@@ -58,8 +59,6 @@ const ContactForm = () => {
 										name="firstName"
 										type="text"
 										required
-										fullWidth
-										autoComplete="given-name"
 										autoFocus
 										value={values.firstName}
 										onChange={handleChange}
@@ -81,8 +80,6 @@ const ContactForm = () => {
 										name="lastName"
 										type="text"
 										required
-										fullWidth
-										autoComplete="family-name"
 										value={values.lastName}
 										onChange={handleChange}
 									/>
@@ -104,7 +101,6 @@ const ContactForm = () => {
 										type="email"
 										fullWidth
 										required
-										autoComplete="email"
 										value={values.email}
 										onChange={handleChange}
 									/>
@@ -124,7 +120,6 @@ const ContactForm = () => {
 										type="text"
 										required
 										fullWidth
-										autoComplete="Subject"
 										value={values.subject}
 										onChange={handleChange}
 									/>
@@ -148,7 +143,6 @@ const ContactForm = () => {
 										type="text"
 										fullWidth
 										required
-										autoComplete="Message"
 										value={values.message}
 										onChange={handleChange}
 									/>
@@ -179,9 +173,6 @@ const ContactForm = () => {
 export default ContactForm;
 
 const Wrap = styled.div`
-	p {
-		margin: none;
-	}
 	.error {
 		color: red;
 		font-size: 12px;

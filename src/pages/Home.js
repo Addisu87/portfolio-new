@@ -12,7 +12,7 @@ import {
 
 function Home() {
 	return (
-		<Section>
+		<Section id="home">
 			<div className="typical-items">
 				<h1>Addisu Haile</h1>
 				<p>

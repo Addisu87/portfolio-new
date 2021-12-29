@@ -37,7 +37,7 @@ const Address = styled.div`
 		padding: 0 0 0 60px;
 		font-size: 20px;
 		font-weight: 600;
-		margin-bottom: 5px;
+		margin-bottom: 3px;
 		color: #050d18;
 	}
 	p {

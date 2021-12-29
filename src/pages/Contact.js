@@ -7,7 +7,7 @@ import ContactForm from '../components/ContactForm';
 
 function Contact() {
 	return (
-		<Section>
+		<Section id="contact">
 			<div className="text">
 				<Title title={'Contact'} />
 				<p>
@@ -19,56 +19,44 @@ function Contact() {
 
 			<Container>
 				<div className="sides">
-					<Row>
-						<Card
-							icon={
-								<FaLocationArrow
-									width={12}
-									height={12}
-									color={'#000'}
-								/>
-							}
-							title={'Location:'}
-							text={'Local 04 Mello, Debre Tabor, Ethiopia'}
-						/>
-						<Card
-							icon={
-								<FaMailBulk
-									width={12}
-									height={12}
-									color={'#000'}
-								/>
-							}
-							title={'Email:'}
-							text={
-								'addisuhaile87@gmail.com & addisu.haile@yahoo.com'
-							}
-						/>
-						<Card
-							icon={
-								<FaPhone
-									width={12}
-									height={12}
-									color={'#000'}
-								/>
-							}
-							title={'Phone:'}
-							text={'+251 912 912 144'}
-						></Card>
+					<Card
+						icon={
+							<FaLocationArrow
+								width={12}
+								height={12}
+								color={'#000'}
+							/>
+						}
+						title={'Location:'}
+						text={'Local 04 Mello, Debre Tabor, Ethiopia'}
+					/>
+					<Card
+						icon={
+							<FaMailBulk width={12} height={12} color={'#000'} />
+						}
+						title={'Email:'}
+						text={
+							'addisuhaile87@gmail.com & addisu.haile@yahoo.com'
+						}
+					/>
+					<Card
+						icon={<FaPhone width={12} height={12} color={'#000'} />}
+						title={'Phone:'}
+						text={'+251 912 912 144'}
+					></Card>
 
-						<div className="map-section">
-							<iframe
-								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17783.63509004089!2d37.993049043930355!3d11.860116659256622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x16447de8d1cb7d57%3A0x8e1445393ee72527!2z4Yiw4Y2I4YioIOGMiOGKkOGJtSDvvIjhiJjhiI7vvIksIOGLsOGJpeGIqCDhibPhiabhiK0!5e1!3m2!1sam!2set!4v1637838405049!5m2!1sam!2set"
-								frameborder="0"
-								border="0"
-								width="450"
-								height="350"
-								allowfullscreen
-								tabIndex="0"
-								aria-hidden="false"
-							></iframe>
-						</div>
-					</Row>
+					<div className="map-section">
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17783.63509004089!2d37.993049043930355!3d11.860116659256622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x16447de8d1cb7d57%3A0x8e1445393ee72527!2z4Yiw4Y2I4YioIOGMiOGKkOGJtSDvvIjhiJjhiI7vvIksIOGLsOGJpeGIqCDhibPhiabhiK0!5e1!3m2!1sam!2set!4v1637838405049!5m2!1sam!2set"
+							frameborder="0"
+							border="0"
+							width="450"
+							height="350"
+							allowfullscreen
+							tabIndex="0"
+							aria-hidden="false"
+						></iframe>
+					</div>
 				</div>
 
 				<div className="sides">
@@ -120,8 +108,4 @@ const Container = styled.div`
 			}
 		}
 	}
-`;
-
-const Row = styled.div`
-	flex: 0.3;
 `;

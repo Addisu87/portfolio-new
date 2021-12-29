@@ -78,7 +78,7 @@ const Container = styled.div`
 	justify-content: center;
 	position: relative;
 	align-items: center;
-	margin-bottom: 8px;
+	margin-bottom: 12px;
 	.slide-container{
 		width: 100%;
 		height: 50vh;

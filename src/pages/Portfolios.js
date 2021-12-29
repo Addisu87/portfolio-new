@@ -26,7 +26,7 @@ function Portfolios() {
 		setMenuItems(filteredData);
 	};
 	return (
-		<Section>
+		<Section id="portfolios">
 			<div class="title">
 				<Title title={'Portfolios'} />
 				<p>

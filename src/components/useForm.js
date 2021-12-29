@@ -15,14 +15,11 @@ function useForm(callback, validate) {
 	});
 
 	const [errors, setErrors] = useState({});
-	const [send, setSend] = useState(false);
 	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	useEffect(() => {
-		if (Object.keys(errors).length === 0) {
-			if (isSubmitting) {
-				setSend(true);
-			}
+		if (Object.keys(errors).length === 0 && isSubmitting) {
+			callback();
 		}
 	}, [errors]);
 
@@ -41,17 +38,14 @@ function useForm(callback, validate) {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		if (send) {
-			emailjs.sendForm(service_id, template_id, e.target, user_id).then(
-				(result) => {
-					console.log(result.text);
-				},
-				(error) => {
-					console.log(error.text);
-				}
-			);
-		}
-		callback();
+		emailjs.sendForm(service_id, template_id, e.target, user_id).then(
+			(result) => {
+				console.log(result.text);
+			},
+			(error) => {
+				console.log(error.text);
+			}
+		);
 	};
 
 	return { handleChange, handleSubmit, values, errors };

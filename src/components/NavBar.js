@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 import '../GlobalStyle.css';
 import image from '../assets/images/profile-img.jpg';
 import {
@@ -11,6 +10,7 @@ import {
 	FaServer,
 	FaUser
 } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
 
 function NavBar() {
 	return (
@@ -21,39 +21,39 @@ function NavBar() {
 			</Profile>
 
 			<Nav>
-				<ul>
-					<li>
-						<NavLink to="/" exact>
+				<ul className="nav-items">
+					<li className="nav-item">
+						<NavLink className="active" exact to="/">
 							<FaHome />
 							<span>Home</span>
 						</NavLink>
 					</li>
-					<li>
-						<NavLink to="/about">
+					<li className="nav-item">
+						<NavLink className="active" to="/about">
 							<FaUser />
 							<span>About</span>
 						</NavLink>
 					</li>
-					<li>
-						<NavLink to="/resume">
+					<li className="nav-item">
+						<NavLink className="active" to="/resume">
 							<FaFile />
 							<span>Resume</span>
 						</NavLink>
 					</li>
-					<li>
-						<NavLink to="/portfolios">
+					<li className="nav-item">
+						<NavLink className="active" to="/portfolios">
 							<FaBook />
 							<span>Portfolios</span>
 						</NavLink>
 					</li>
-					<li>
-						<NavLink to="/services">
+					<li className="nav-item">
+						<NavLink className="active" to="/services">
 							<FaServer />
 							<span>Services</span>
 						</NavLink>
 					</li>
-					<li>
-						<NavLink to="/contact">
+					<li className="nav-item">
+						<NavLink className="active" to="/contact">
 							<FaEnvelope />
 							<span>Contact</span>
 						</NavLink>

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import NavBar from './components/NavBar.js';
+import NavBar from './components/NavBar';
 import styled from 'styled-components';
-import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home.js';
-import About from './pages/About.js';
-import Resume from './pages/Resume.js';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Resume from './pages/Resume';
 import Portfolios from './pages/Portfolios';
-import Services from './pages/Services.js';
-import Contact from './pages/Contact.js';
-import ScrollTopArrow from './components/ScrollTopArrow.js';
+import Services from './pages/Services';
+import Contact from './pages/Contact';
+import ScrollTopArrow from './components/ScrollTopArrow';
 
 function App() {
 	const [navToggle, setNavToggle] = useState(false);
@@ -18,37 +18,42 @@ function App() {
 	};
 
 	return (
-		<Wrap>
-			<div className={`side-bar ${navToggle ? 'navToggle' : ' '}`}>
-				<NavBar />
-			</div>
-			<div className="nav-btn" onClick={navClick}>
-				<div className="line-1"></div>
-				<div className="line-2"></div>
-				<div className="line-3"></div>
-			</div>
-			<div className="main-content">
-				<div className="content">
-					<Routes>
-						<Route path="/" element={<Home />} exact />
-						<Route path="/about" element={<About />} />
-						<Route path="/resume" element={<Resume />} />
-						<Route path="/portfolios" element={<Portfolios />} />
-						<Route path="/services" element={<Services />} />
-						<Route path="/contact" element={<Contact />} />
-					</Routes>
+		<Router>
+			<Main className="app">
+				<div className={`side-bar ${navToggle ? 'navToggle' : ' '}`}>
+					<NavBar />
 				</div>
-			</div>
-			<div className="scrollTop">
-				<ScrollTopArrow />
-			</div>
-		</Wrap>
+				<div className="nav-btn" onClick={navClick}>
+					<div className="line-1"></div>
+					<div className="line-2"></div>
+					<div className="line-3"></div>
+				</div>
+				<div className="main-content">
+					<div className="content">
+						<Routes>
+							<Route path="/" element={<Home />} />
+							<Route path="/about" element={<About />} />
+							<Route path="/resume" element={<Resume />} />
+							<Route
+								path="/portfolios"
+								element={<Portfolios />}
+							/>
+							<Route path="/services" element={<Services />} />
+							<Route path="/contact" element={<Contact />} />
+						</Routes>
+					</div>
+				</div>
+				<div>
+					<ScrollTopArrow />
+				</div>
+			</Main>
+		</Router>
 	);
 }
 
 export default App;
 
-const Wrap = styled.div`
+const Main = styled.div`
 	.side-bar {
 		width: 16%;
 		height: 100vh;
@@ -116,7 +121,6 @@ const Wrap = styled.div`
 		top: 5%;
 		width: 2rem;
 		height: 2rem;
-		display: none;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
