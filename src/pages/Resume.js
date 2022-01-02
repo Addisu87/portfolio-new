@@ -28,10 +28,7 @@ function Resume() {
 						<ul>
 							<li>Mello, Debre Tabor, Ethiopia</li>
 							<li>(+251) 912 912 144</li>
-							<li>
-								addisuhaile87@gmail.com &amp;
-								addisu.haile@yahoo.com
-							</li>
+							<li>addisuhaile87@gmail.com</li>
 						</ul>
 					</ResumeItem>
 

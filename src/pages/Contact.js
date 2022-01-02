@@ -35,9 +35,7 @@ function Contact() {
 							<FaMailBulk width={12} height={12} color={'#000'} />
 						}
 						title={'Email:'}
-						text={
-							'addisuhaile87@gmail.com & addisu.haile@yahoo.com'
-						}
+						text={'addisuhaile87@gmail.com'}
 					/>
 					<Card
 						icon={<FaPhone width={12} height={12} color={'#000'} />}

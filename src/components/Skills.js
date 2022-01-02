@@ -41,7 +41,7 @@ const SkillsContents = styled.div`
 			}
 			.skill-progress {
 				width: 100%;
-				.progress{
+				.progress {
 					width: 100%;
 					height: 0.3rem;
 					position: relative;
@@ -49,7 +49,7 @@ const SkillsContents = styled.div`
 					background-color: #dff3fc;
 					.inner-progress {
 						position: absolute;
-						background-color: #149ddd ;
+						background-color: #149ddd;
 						height: 100%;
 						bottom: 0;
 						left: 0;
@@ -58,6 +58,5 @@ const SkillsContents = styled.div`
 				}
 			}
 		}
-	}
 	}
 `;

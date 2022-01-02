@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NavBar from './components/NavBar';
 import styled from 'styled-components';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Resume from './pages/Resume';
@@ -9,6 +9,7 @@ import Portfolios from './pages/Portfolios';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import ScrollTopArrow from './components/ScrollTopArrow';
+import MenuIcon from '@mui/icons-material/Menu';
 
 function App() {
 	const [navToggle, setNavToggle] = useState(false);
@@ -18,36 +19,31 @@ function App() {
 	};
 
 	return (
-		<Router>
-			<Main className="app">
-				<div className={`side-bar ${navToggle ? 'navToggle' : ' '}`}>
-					<NavBar />
+		<Main className="app">
+			<div className={`side-bar ${navToggle ? 'navToggle' : ' '}`}>
+				<NavBar />
+			</div>
+
+			<div className="nav-btn" onClick={navClick}>
+				<MenuIcon className="menu-icon" />
+			</div>
+
+			<div className="main-content">
+				<div className="content">
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/about" element={<About />} />
+						<Route path="/resume" element={<Resume />} />
+						<Route path="/portfolios" element={<Portfolios />} />
+						<Route path="/services" element={<Services />} />
+						<Route path="/contact" element={<Contact />} />
+					</Routes>
 				</div>
-				<div className="nav-btn" onClick={navClick}>
-					<div className="line-1"></div>
-					<div className="line-2"></div>
-					<div className="line-3"></div>
-				</div>
-				<div className="main-content">
-					<div className="content">
-						<Routes>
-							<Route path="/" element={<Home />} />
-							<Route path="/about" element={<About />} />
-							<Route path="/resume" element={<Resume />} />
-							<Route
-								path="/portfolios"
-								element={<Portfolios />}
-							/>
-							<Route path="/services" element={<Services />} />
-							<Route path="/contact" element={<Contact />} />
-						</Routes>
-					</div>
-				</div>
-				<div>
-					<ScrollTopArrow />
-				</div>
-			</Main>
-		</Router>
+			</div>
+			<div>
+				<ScrollTopArrow />
+			</div>
+		</Main>
 	);
 }
 
@@ -110,9 +106,6 @@ const Main = styled.div`
 		h4 {
 			font-size: 12px;
 		}
-		h5 {
-			font-size: 10px;
-		}
 	}
 	.nav-btn {
 		position: absolute;
@@ -125,12 +118,10 @@ const Main = styled.div`
 		align-items: center;
 		justify-content: space-between;
 		cursor: pointer;
-		.line-1,
-		.line-2,
-		.line-3 {
-			height: 0.3rem;
+		svg {
+			height: 3rem;
 			width: 100%;
-			background-color: #149ddd;
+			color: #149ddd;
 			pointer-events: none;
 			display: none;
 			border-radius: 30px;
@@ -140,9 +131,7 @@ const Main = styled.div`
 		}
 		@media screen and (max-width: 1000px) {
 			display: block;
-			.line-1,
-			.line-2,
-			.line-3 {
+			svg {
 				display: block;
 			}
 		}

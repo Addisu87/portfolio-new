@@ -18,6 +18,16 @@ function About() {
 			<Title title={'About'} />
 			<ContentAbout />
 			<Title title={'Skills'} />
+			<div>
+				<p>
+					I create successful responsive websites that are fast, easy
+					to use, and built with best practices. The main area of my
+					expertise is front-end development, HTML, CSS, JS, building
+					small and medium web apps, custom plugins, features,
+					animations, and coding interactive layouts. Visit my github
+					profile for more details or just contact me.
+				</p>
+			</div>
 			<SkillsContainer>
 				<Skills
 					skill={'HTML'}

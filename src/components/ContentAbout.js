@@ -18,9 +18,6 @@ function ContentAbout() {
 			</div>
 
 			<Row>
-				<Image>
-					<img src={profile} alt="profile-Img" />
-				</Image>
 				<Contents>
 					<div className="about-info">
 						<h3>UI/UX Designer &amp; Web Developer.</h3>
@@ -28,7 +25,11 @@ function ContentAbout() {
 							I have a serious passion for UI effects, animations
 							and creating intuitive, dynamic user experiences.
 						</p>
+
 						<div className="about-details">
+							<div>
+								<img src={profile} alt="profile-Img" />
+							</div>
 							<div className="name-details">
 								<ul>
 									<li>
@@ -68,10 +69,7 @@ function ContentAbout() {
 									<li>
 										<FaChevronRight />
 										<strong>Email:</strong>
-										<span>
-											addisuhaile87@gmail.com &amp;
-											addisu.haile@yahoo.com
-										</span>
+										<span>addisuhaile87@gmail.com </span>
 									</li>
 									<li>
 										<FaChevronRight />
@@ -111,7 +109,7 @@ const Container = styled.div`
 	p {
 		padding: 8px;
 	}
-	@media screen and (max-width: 1400px) {
+	@media screen and (max-width: 768px) {
 		flex-direction: column;
 		.about-info {
 			margin-left: 0;
@@ -122,18 +120,6 @@ const Container = styled.div`
 
 const Row = styled.div`
 	display: flex;
-	@media screen and (max-width: 1100px) {
-		grid-template-columns: repeat(1, 1fr);
-	}
-`;
-
-const Image = styled.div`
-	position: relative;
-	border-radius: 50%;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	margin: 20px 20px;
 `;
 
 const Contents = styled.div`
@@ -148,15 +134,20 @@ const Contents = styled.div`
 		overflow: hidden;
 		display: grid;
 		width: 100%;
-		grid-template-columns: repeat(2, 1fr);
-		column-gap: 2rem;
+		grid-template-columns: repeat(3, 1fr);
+		column-gap: 1.5rem;
 		row-gap: 1.5rem;
-		@media screen and (max-width: 1100px) {
+		img {
+			position: relative;
+			width: 80%;
+			height: 100%;
+			object-fit: cover;
+		}
+		@media screen and (max-width: 768px) {
 			grid-template-columns: repeat(1, 1fr);
 			grid-gap: 0;
 		}
 		.name-details {
-			margin: 0.2rem 0;
 			ul {
 				list-style: none;
 				padding: 0;
